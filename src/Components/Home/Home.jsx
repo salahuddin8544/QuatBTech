@@ -31,17 +31,21 @@ const Home = () => {
             }
           </div>
           </div>
+          {data.length ===0? 
+            <></>
+          :
           <div className="col-4 card m-0 p-0">
-            <img style={{height:'250px'}} src={data?.image?.original} alt="" />
-            <div className="card-body text-start m-0 p-2">
-             <h5 className="card-title h4 p-0 m-0">{data?.name}</h5>
-             <p className="card-text text-dark m-0">Runtime: {data?.runtime}</p>
-             <p className="p-0 m-0 text-dark">premiered: {data?.premiered}</p>
-             <p className="p-0 m-0 text-dark">Time: {data?.schedule?.time}</p>
-              <p className="p-0 m-0  text-muted "><span className='text-bold text-dark'>Details:</span> {data?.summary?.slice(3,-4)}</p> 
-              <Link to={data?.network?. officialSite} className='btn btn-primary rounded my-2'>Book Now </Link>   
-            </div>
+          <img style={{height:'250px'}} src={data?.image?.original} alt="" />
+          <div className="card-body text-start m-0 p-2">
+           <h5 className="card-title h4 p-0 m-0">{data?.name}</h5>
+           <p className="card-text text-dark m-0">Runtime: {data?.runtime}</p>
+           <p className="p-0 m-0 text-dark">premiered: {data?.premiered}</p>
+           <p className="p-0 m-0 text-dark">Time: {data?.schedule?.time}</p>
+            <p className="p-0 m-0  text-muted "><span className='text-bold text-dark'>Details:</span> {data?.summary?.slice(3,-4)}</p> 
+            <Link to={data?.network?. officialSite} className='btn btn-primary rounded my-2'>Book Now </Link>   
           </div>
+        </div>
+          }
         </div>
       </div>
     );
